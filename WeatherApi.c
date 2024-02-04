@@ -1,4 +1,4 @@
-// Working on Weather Api
+// Working on weather Api
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,22 +11,22 @@ void main()
 	scanf("%s", city);
 
 	sprintf(url, "%s%s%s", "curl \"https://api.openweathermap.org/data/2.5/weather?q=", city, "&appid=abe3a0f4d0b6cebfbe7393b4b4e3aa28&units=metric\" > weather.txt");
-	printf("url");
+	printf("%s",url);
 	system(url);
 
-	FILE *fp_weather = fopen("weather.txt", "r");
+	FILE *fp_weatherData = fopen("weather.txt", "r");
 
-	fseek(fp_weather, 0, SEEK_END);
+	fseek(fp_weatherData, 0, SEEK_END);
 
-	int length = ftell(fp_weather);
+	int length = ftell(fp_weatherData);
 
 	char weatherData[length];
 
-	fseek(fp_weather, 0, SEEK_SET);
+	fseek(fp_weatherData, 0, SEEK_SET);
 
-	fread(weatherData, sizeof(weatherData), 1, fp_weather);
+	fread(weatherData, sizeof(weatherData), 1, fp_weatherData);
 
-	fclose(fp_weather);
+	fclose(fp_weatherData);
 
 	char *token = strtok(weatherData, ":");
 
