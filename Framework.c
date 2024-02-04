@@ -96,24 +96,24 @@ void showMenu()
 	switch (choice)
 	{
 		case 1: addRecord(getRecordDetails());
-				break;
+			break;
 
 		case 2: showAllRecords();
-				break;
+			break;
 
 		case 3: updateRecord(getRecordId());
-				break;
+			break;
 
 		case 4: deleteRecord(getRecordId());
-				break;
+			break;
 
 		case 5: searchRecord(getRecordId());
-				break;
+			break;
 
 		case 6: printf("Exiting.");
-				fclose(fp_fields);
-				fclose(fp_messages);
-				exit(0);
+			fclose(fp_fields);
+			fclose(fp_messages);
+			exit(0);
 
 		default: printf("Enter a valid choice.\n");
 	}
