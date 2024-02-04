@@ -5,8 +5,8 @@
 #include <string.h>
 
 #define FIELDVALUELENGTH 20
-#define FIELDNAMELENGTH 50
-#define MESSAGELENGTH 250
+#define FIELDNAMELENGTH 500
+#define MESSAGELENGTH 300
 #define FIELDSFILE "fields.cfg"
 #define MENUFILE "menu.cfg"
 #define DATAFILE "framework0.dat"
@@ -44,11 +44,11 @@ void main()
 	FieldsCount = getFieldsCount();
 	fieldNames = getFieldsArray();
 	messages = getMessagesArray();
-	do
+	
+    while (1)
 	{
 		showMenu();
 	}
-    while (1);
 }
 
 int getFieldsCount()
@@ -96,24 +96,24 @@ void showMenu()
 	switch (choice)
 	{
 		case 1: addRecord(getRecordDetails());
-			break;
+				break;
 
 		case 2: showAllRecords();
-			break;
+				break;
 
 		case 3: updateRecord(getRecordId());
-			break;
+				break;
 
 		case 4: deleteRecord(getRecordId());
-			break;
+				break;
 
 		case 5: searchRecord(getRecordId());
-			break;
+				break;
 
 		case 6: printf("Exiting.");
-			fclose(fp_fields);
-			fclose(fp_messages);
-			exit(0);
+				fclose(fp_fields);
+				fclose(fp_messages);
+				exit(0);
 
 		default: printf("Enter a valid choice.\n");
 	}
@@ -351,3 +351,4 @@ char** getMessagesArray()
 	}
 	return messages;
 }
+
