@@ -10,7 +10,7 @@
 #define FIELDSFILE "fields.cfg"
 #define MENUFILE "menu.cfg"
 #define DATAFILE "framework0.dat"
-#define MESSAGESFILE "messages.dat"
+#define MESSAGESFILE "messages.cfg"
 
 FILE *fp_data, *fp_fields, *fp_menu, *fp_messages;
 char fieldValue[FIELDVALUELENGTH], fieldName[FIELDNAMELENGTH], message[FIELDNAMELENGTH];
